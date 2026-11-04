@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d22">
+  <title>PIXEL CLAW ARCADE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="app-shell">
+    <section id="home-screen" class="screen home-screen">
+      <header class="topbar">
+        <div class="coin-display"><span class="coin-icon">¢</span><span class="points">1,000</span><small>PT</small></div>
+        <div class="topbar-center">FREE PLAY · NO LOGIN</div>
+        <a class="collection-link" href="#today-prize">▤ COLLECTION</a>
+      </header>
+
+      <main class="home-main">
+        <div class="hero-copy">
+          <p class="eyebrow">WELCOME TO THE ARCADE</p>
+          <h1><span>PIXEL CLAW</span><strong>ARCADE</strong></h1>
+          <p class="hero-subtitle">INSERT COIN TO PLAY!</p>
+        </div>
+
+        <div class="hero-machine" aria-label="인형뽑기 기계 미리보기">
+          <div class="machine-sign">★ PRIZE ZONE ★</div>
+          <div class="preview-window">
+            <div class="preview-rail"></div>
+            <div class="preview-claw"><i></i><b>♧</b></div>
+            <div class="preview-plushies"><span>🧸</span><span>🐰</span><span>🐥</span><span>🐱</span></div>
+          </div>
+          <div class="machine-base">LUCKY · HAPPY · PLAY</div>
+        </div>
+
+        <button id="start-button" class="start-button" type="button"><span>▶</span> START GAME</button>
+
+        <div class="home-panels">
+          <section class="pixel-panel guide-panel">
+            <h2>🎮 GAME GUIDE</h2>
+            <div class="guide-row"><kbd>← →</kbd><span>집게 좌우 이동</span></div>
+            <div class="guide-row"><kbd>↑ ↓</kbd><span>집게 앞뒤 이동</span></div>
+            <div class="guide-row"><kbd>SPACE</kbd><span>집게 내리기</span></div>
+            <p class="panel-note">방향키로 집게를 움직이고 SPACE로 내려보세요!</p>
+          </section>
+          <section id="today-prize" class="pixel-panel featured-panel">
+            <h2>★ TODAY'S PRIZE</h2>
+            <div class="featured-toy">🐱</div>
+            <strong>냥냥이</strong>
+            <span class="rarity">★★★ RARE</span>
+          </section>
+        </div>
+      </main>
+      <footer class="site-footer"><span>///</span> PIXEL CLAW ARCADE · HAVE FUN! <span>///</span></footer>
+    </section>
+
+    <section id="game-screen" class="screen game-screen" hidden>
+      <header class="game-topbar">
+        <div class="coin-display"><span class="coin-icon">¢</span><span class="points">1,000</span><small>PT</small></div>
+        <h1>LET'S PLAY!</h1>
+        <button id="home-button" class="home-button" type="button">⌂ HOME</button>
+      </header>
+
+      <main class="game-main">
+        <div class="machine-frame">
+          <div class="machine-marquee">★ PIXEL CLAW MACHINE ★</div>
+          <div class="machine-window">
+            <div class="backdrop-stars">✦　·　✧　　✦　·　✧</div>
+            <div class="machine-track"></div>
+            <div class="game-claw" aria-label="집게" style="--claw-x:50%;--claw-y:0px"><span class="claw-cable"></span><span class="claw-head">♧</span></div>
+            <div class="prize-pile">
+              <span>🧸</span><span>🐰</span><span>🐥</span><span>🐸</span><span>🐱</span>
+              <span>🐼</span><span>🐧</span><span>🐻</span><span>🐹</span><span>🦊</span>
+            </div>
+            <div class="machine-floor"></div>
+          </div>
+          <div class="machine-lower"><span>GOOD LUCK!</span><span>PRIZE OUT ↓</span></div>
+        </div>
+
+        <section class="control-panel">
+          <div class="direction-controls" aria-label="방향 조작 버튼">
+            <span></span><button type="button" class="control-button" data-direction="up" aria-label="앞으로">↑</button><span></span>
+            <button type="button" class="control-button" data-direction="left" aria-label="왼쪽">←</button>
+            <button type="button" class="control-button" data-direction="down" aria-label="뒤로">↓</button>
+            <button type="button" class="control-button" data-direction="right" aria-label="오른쪽">→</button>
+          </div>
+          <button type="button" class="drop-button">▼ 내리기<small>SPACE</small></button>
+          <aside class="game-tip"><strong>★ GAME TIP ★</strong><p>방향키 또는 버튼으로<br>집게를 움직여 보세요!</p><small>SPACE로 집게를 내립니다.</small></aside>
+        </section>
+        <p class="game-status" role="status" aria-live="polite">방향키로 집게를 조작하세요.</p>
+        <button id="restart-game" class="restart-button" type="button" hidden>↻ 다시하기</button>
+      </main>
+    </section>
+  </div>
+</body>
+</html>
